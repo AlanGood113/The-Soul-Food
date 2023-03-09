@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Soul Food - Restaurant</title>
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <style>
+    #purchaseModal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100% !important;
+      height: 100% !important;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 1025px) {
+      .col-lg-7 {
+        margin-bottom: 10px;
+      }
+    }
+
+    .payment-form form {
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+      background-color: #ffffff;
+      padding: 0;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .payment-form .title {
+      font-size: 1em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 0.8em;
+      font-weight: 600;
+      padding-bottom: 8px;
+    }
+
+    .payment-form .products {
+      background-color: #f7fbff;
+      padding: 25px;
+    }
+
+    .payment-form .products .item {
+      margin-bottom: 1em;
+    }
+
+    .payment-form .products .item-name {
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    .payment-form .products .item-description {
+      font-size: 0.8em;
+      opacity: 0.6;
+    }
+
+    .payment-form .products .item p {
+      margin-bottom: 0.2em;
+    }
+
+    .payment-form .products .price {
+      float: right;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    .payment-form .products .total {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      padding-top: 19px;
+      font-weight: 600;
+      line-height: 1;
+      font-size: 18px;
+    }
+
+    .payment-form .card-details {
+      padding: 25px 25px 15px;
+    }
+
+    .payment-form .card-details label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #79818a;
+      text-transform: uppercase;
+    }
+
+    .payment-form .card-details button {
+      margin-top: 0.6em;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+
+    .payment-form .date-separator {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    @media (min-width: 576px) {
+      .payment-form .title {
+        font-size: 1.2em;
+      }
+    }
+      @media (max-width: 576px) {
+      .row .col-sm-6{
+        padding-left: 12%;
+        padding-right: 12%;
+      }
+    }
+      .payment-form .products {
+        padding: 40px;
+      }
+
+      .payment-form .products .item-name {
+        font-size: 1em;
+      }
+
+      .payment-form .products .price {
+        font-size: 1em;
+      }
+
+      .payment-form .card-details {
+        padding: 40px 40px 30px;
+      }
+
+      .payment-form .card-details button {
+        margin-top: 2em;
+      }
+    
+  </style>
+</head>
+
+<body class="bg-light">
+  <!-- Navigation-->
+  <nav class="navbar sticky-top bg-light">
+    <div class="container bg-light d-flex justify-content-between px-4">
+      <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
+        <i class="bi-cart-fill me-1"></i>
+        Cart
+        <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Header-->
+  <header class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-black">
+        <h1 class="display-4 fw-bolder">Island Farm</h1>
+        <p class="lead fw-light text-black-50 mb-0">
+          Browse available products below and place your orders.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section-->
+  <section>
+    <div class="container mt-3">
+      <div class="row">
+        
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Tomato" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="images/tomatoes.webp" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Tomato</h6>
+                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Sweet Peppers" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="images/sweetpeppers.jpeg" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Sweet Peppers</h6>
+                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Cucumber" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="images/cucumbers.jpeg" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Cucumber</h6>
+                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Cabbage" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="images/cabbage.webp" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Cabbage</h6>
+                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purchase Modal -->
+
+  <div class="modal" id="purchaseModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+            <div class="container-fluid payment-form dark">
+              <form>
+                <div class="products">
+                  <button type="button" class="btn mb-3" onclick="closeModal()">
+                    <span aria-hidden="true"><svg viewBox="0 0 448 512" width="14" title="arrow-left">
+                      <path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z" />
+                    </svg></span>
+                  </button>
+                  <div id="loadCart">
+                  </div>
+                  <div class="total">Total<span class="price" id="totalPrice"></span></div>
+                </div>
+                <div class="card-details">
+                  <h3 class="title">Personal Details</h3>
+                  <div class="form-group mb-1">
+                    <label for="card-holder">Full Name</label>
+                    <input id="card-holder" type="text" class="form-control">
+                  </div>
+                  <div class="form-group mb-1">
+                    <label for="card-number">Address</label>
+                    <input id="card-number" type="text" class="form-control">
+                  </div>
+                  <div class="form-group mb-1">
+                    <label for="card-number">Phone Number</label>
+                    <input id="card-number" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="card-number">Email</label>
+                    <input id="card-number" type="text" class="form-control">
+                  </div>
+                  <div class="form-group d-grid">
+                    <button type="button" class="btn btn-dark btn-block">Order Now</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        <a style="color: white" href="mailto:drewenterprises@gmail.com">drewenterprises@gmail.com</a>
+        | <a style="color: white" href="tel:17845299090">+1 (784) 529-6447</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    var total = 0
+    var cart = []
+    totalBadge = document.getElementById('totalBadge');
+    totalBadge.innerHTML = '$' + total
+
+    function openModal() {
+      if (cart.length != 0) {
+        var modal = document.getElementById('purchaseModal');
+        var totalInput = document.getElementById('totalPrice');
+        totalInput.innerHTML = document.getElementById('totalBadge').innerHTML;
+        var cartList = document.getElementById('loadCart');
+        cartList.innerHTML = '';
+        for (var i = 0; i < cart.length; i++) {
+          cartList.innerHTML += `<div class="item">
+                        <span class="price">\$${parseFloat(cart[i][1][1]) * parseInt(cart[i][2])}</span>
+                        <div class="d-flex">
+                          <img src="${cart[i][3]}" style="width: 50px; border-radius: 50px; margin-right: 10px;"/>
+                          <div>                        <p class="item-name">${cart[i][0]}</p>
+                        <p class="item-description">${cart[i][1]} x ${cart[i][2]}</p></div>
+                          </div>
+                        
+                      </div>`
+        }
+        modal.style.display = 'block';
+      }
+    }
+    function closeModal() {
+      var modal = document.getElementById('purchaseModal');
+      modal.style.display = 'none';
+    }
+
+    function test() {
+      total = 0
+      cart = []
+      var checkboxes = document.getElementsByClassName('checkbox');
+      for (var i in checkboxes) {
+        if (checkboxes[i].checked) {
+          var dets = checkboxes[i].parentElement.getElementsByClassName('productDetails');
+          var price = parseFloat(dets[2].innerHTML.match(/[\d\.]+/))
+          var quantity = parseInt(dets[3].value)
+          cart.push([dets[1].innerHTML, dets[2].innerHTML, dets[3].value, dets[0].src])
+          total += price * quantity
+        }
+      }
+      console.log(cart)
+      totalBadge.innerHTML = '$' + total
+    }
+  </script>
+</body>
+
+</html>
