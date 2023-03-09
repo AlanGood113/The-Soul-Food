@@ -143,22 +143,31 @@
 
 <body class="bg-light">
   <!-- Navigation-->
-  <nav class="navbar sticky-top bg-light">
-    <div class="container bg-light d-flex justify-content-between px-4">
-      <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
-        <i class="bi-cart-fill me-1"></i>
-        Cart
-        <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
-      </button>
-    </div>
-  </nav>
+  <div class="menu-bar">
+    <nav class="navbar sticky-top bg-light">
+      <div class="container bg-light d-flex justify-content-between px-4">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Blog</li>
+          </ol>
+        </div>
+        <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
+          <i class="bi-cart-fill me-1"></i>
+          Cart
+          <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
   <!-- Header-->
-  <header class="py-5 bg-light">
+  <header style="background-color: #013328;" class="py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-black">
-        <h1 class="display-4 fw-bolder">Island Farm</h1>
+        <h1 class="display-4 fw-bolder">The Soul Food - Restaurant</h1>
         <p class="lead fw-light text-black-50 mb-0">
-          Browse available products below and place your orders.
+          Browse available meals below and place your orders.
         </p>
       </div>
     </div>
@@ -332,15 +341,6 @@
       </div>
     </div>
   </div>
-  <!-- Footer-->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">
-        <a style="color: white" href="mailto:drewenterprises@gmail.com">drewenterprises@gmail.com</a>
-        | <a style="color: white" href="tel:17845299090">+1 (784) 529-6447</a>
-      </p>
-    </div>
-  </footer>
 
   <script>
     var total = 0
