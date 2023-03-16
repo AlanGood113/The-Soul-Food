@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="static/bootstrap.min.css">
   <link rel="stylesheet" href="static/style.css">
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <style>
+  <!-- <style>
     #purchaseModal {
       display: none;
       position: fixed;
@@ -138,31 +138,38 @@
         margin-top: 2em;
       }
     
-  </style>
+  </style> -->
 </head>
 
 <body class="bg-light">
   <!-- Navigation-->
-  <nav class="navbar sticky-top bg-light">
-    <div class="container bg-light d-flex justify-content-between px-4">
-      <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
-        <i class="bi-cart-fill me-1"></i>
-        Cart
-        <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
-      </button>
-    </div>
-  </nav>
-  <!-- Header-->
-  <header class="py-5 bg-light">
-    <div class="container px-4 px-lg-5 my-5">
-      <div class="text-center text-black">
-        <h1 class="display-4 fw-bolder">Island Farm</h1>
-        <p class="lead fw-light text-black-50 mb-0">
-          Browse available products below and place your orders.
-        </p>
+  <div class="menu-bar">
+    <nav>
+      <div class="container d-flex justify-content-between">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Restaurant</li>
+        </ol>
+        <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
+          <i class="bi-cart-fill me-1"></i>
+          Cart
+          <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">The Soul Food - Restaurant</h1>
+            <p class="lead fw-light text-white mb-0">
+              Browse available meals below and place your orders.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Section-->
   <section>
@@ -332,15 +339,6 @@
       </div>
     </div>
   </div>
-  <!-- Footer-->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">
-        <a style="color: white" href="mailto:drewenterprises@gmail.com">drewenterprises@gmail.com</a>
-        | <a style="color: white" href="tel:17845299090">+1 (784) 529-6447</a>
-      </p>
-    </div>
-  </footer>
 
   <script>
     var total = 0
