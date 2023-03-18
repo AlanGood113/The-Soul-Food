@@ -142,27 +142,32 @@
 </head>
 
 <body class="bg-light">
-  <!-- Navigation-->
-  <nav class="navbar sticky-top bg-light">
-    <div class="container bg-light d-flex justify-content-between px-4">
-      <button class="btn btn-outline-dark" type="submit" onclick="openModal()">
-        <i class="bi-cart-fill me-1"></i>
-        Cart
-        <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
-      </button>
-    </div>
-  </nav>
-  <!-- Header-->
-  <header class="py-5 bg-light">
-    <div class="container px-4 px-lg-5 my-5">
-      <div class="text-center text-black">
-        <h1 class="display-4 fw-bolder">Island Farm</h1>
-        <p class="lead fw-light text-black-50 mb-0">
-          Browse available products below and place your orders.
-        </p>
+  <div class="menu-bar">
+    <nav>
+      <div class="container d-flex">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Restaurant</li>
+        </ol>
+        <button class="btn btn-outline-dark ms-auto" type="submit" onclick="openModal()">
+          <i class="bi-cart-fill me-1"></i>
+          Cart
+          <span id="totalBadge" class="badge bg-dark text-white ms-1 rounded-pill"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>The Soul Food</h2>
+            <br>
+            <h4 class="roboto" style="color: white;">Restaurant</h4>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Section-->
   <section>
@@ -172,11 +177,98 @@
         <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
           <form action="">
             <div id="Tomato" class="card h-100 w-100 pb-4">
-              <img class="card-img-top productDetails" src="images/tomatoes.webp" width="200" height="200" alt="...">
+              <img class="card-img-top productDetails" src="assets/img/restaurant/meal1.webp" width="200" height="200" alt="...">
               <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
               <div class="text-center">
-                <h6 id="productName" class="fw-bolder productDetails">Tomato</h6>
-                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
+                <h6 id="productName" class="fw-bolder productDetails">Meal 1</h6>
+                <p id="productPrice" class="fw-light price productDetails">$80</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Tomato" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="assets/img/restaurant/meal2.webp" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Meal 2</h6>
+                <p id="productPrice" class="fw-light price productDetails">$80</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Tomato" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="assets/img/restaurant/meal3.webp" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Meal 3</h6>
+                <p id="productPrice" class="fw-light price productDetails">$80</p>
+              </div>
+              <div class="justify-content-center d-flex">
+                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+          <form action="">
+            <div id="Tomato" class="card h-100 w-100 pb-4">
+              <img class="card-img-top productDetails" src="assets/img/restaurant/meal4.webp" width="200" height="200" alt="...">
+              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
+              <div class="text-center">
+                <h6 id="productName" class="fw-bolder productDetails">Meal 4</h6>
+                <p id="productPrice" class="fw-light price productDetails">$80</p>
               </div>
               <div class="justify-content-center d-flex">
                 <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
@@ -198,92 +290,6 @@
           </form>
         </div>
         
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-          <form action="">
-            <div id="Sweet Peppers" class="card h-100 w-100 pb-4">
-              <img class="card-img-top productDetails" src="images/sweetpeppers.jpeg" width="200" height="200" alt="...">
-              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
-              <div class="text-center">
-                <h6 id="productName" class="fw-bolder productDetails">Sweet Peppers</h6>
-                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
-              </div>
-              <div class="justify-content-center d-flex">
-                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-          <form action="">
-            <div id="Cucumber" class="card h-100 w-100 pb-4">
-              <img class="card-img-top productDetails" src="images/cucumbers.jpeg" width="200" height="200" alt="...">
-              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
-              <div class="text-center">
-                <h6 id="productName" class="fw-bolder productDetails">Cucumber</h6>
-                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
-              </div>
-              <div class="justify-content-center d-flex">
-                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-          <form action="">
-            <div id="Cabbage" class="card h-100 w-100 pb-4">
-              <img class="card-img-top productDetails" src="images/cabbage.webp" width="200" height="200" alt="...">
-              <input style="position: absolute; top: 10px; left: 10px;" type="checkbox" class="form-check-input checkbox" onchange="test()">
-              <div class="text-center">
-                <h6 id="productName" class="fw-bolder productDetails">Cabbage</h6>
-                <p id="productPrice" class="fw-light price productDetails">$8 per lb</p>
-              </div>
-              <div class="justify-content-center d-flex">
-                <select id="quantity" class="form-select quantity productDetails" style="width: 40%;" onchange="test()">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </section>
