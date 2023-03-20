@@ -586,11 +586,11 @@
         cartList.innerHTML = '';
         for (var i = 0; i < cart.length; i++) {
           cartList.innerHTML += `<div class="item">
-                        <span class="price">\$${parseFloat(cart[i][1][1]) * parseInt(cart[i][2])}</span>
+                        <span class="price">\$${parseFloat(cart[i][1]) * parseInt(cart[i][2])}</span>
                         <div class="d-flex">
                           <img src="${cart[i][3]}" style="width: 50px; border-radius: 50px; margin-right: 10px;"/>
                           <div>                        <p class="item-name">${cart[i][0]}</p>
-                        <p class="item-description">${cart[i][1]} x ${cart[i][2]}</p></div>
+                        <p class="item-description roboto">\$${cart[i][1]} x ${cart[i][2]}</p></div>
                           </div>
                         
                       </div>`
@@ -612,7 +612,7 @@
           var dets = checkboxes[i].parentElement.getElementsByClassName('productDetails');
           var price = parseFloat(dets[2].innerHTML.match(/[\d\.]+/))
           var quantity = parseInt(dets[3].value)
-          cart.push([dets[1].innerHTML, dets[2].innerHTML, dets[3].value, dets[0].src])
+          cart.push([dets[1].innerHTML, parseFloat(dets[2].innerHTML.match(/[\d\.]+/)), dets[3].value, dets[0].src])
           total += price * quantity
         }
       }
