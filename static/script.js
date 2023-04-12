@@ -92,3 +92,46 @@ function openModal() {
     `
     }
   }
+
+  function loadCookbook() {
+    var main = document.getElementById('cookbook-items')
+    var meals = [
+      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-5.jpg'],
+  ]
+    main.innerHTML = ''
+    for (let i of meals) {
+      main.innerHTML += `
+      <div class="col-xl-4 col-md-6">
+      <article onclick="goToBlogDetails(\'${i}\')">
+
+        <div class="post-img">
+          <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
+        </div>
+        <h2 class="title">
+          <a href="blog-details.html">${i[0]}</a>
+        </h2>
+
+        <div class="d-flex align-items-center">
+          <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
+          <div class="post-meta">
+            <p class="post-author-list">${i[2]}</p>
+            <p class="post-date">
+              <time datetime="2022-01-01">${i[3]}</time>
+            </p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+    `
+    }
+  }
+
+  function goToBlogDetails(i){
+    sessionStorage.setItem('meal',JSON.stringify(i))
+    location.replace('blog-details.html')
+  }
+
+  function loadBlogDetails(){
+    alert(sessionStorage.getItem('meal'))
+  }
