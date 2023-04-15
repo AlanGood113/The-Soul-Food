@@ -137,9 +137,7 @@ function loadBlog() {
   var main = document.getElementById('blog-items')
   var meals = [
     ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Amelia Edwards', 'Oct 31, 2022', 'blog-author-2.jpg'],
-    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-3.jpg'],
-    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-4.jpg'],
-    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-5.jpg'],
+    ['Chicken Bacon Ranch Pasta', 'Chicken Bacon Ranch Pasta.jpeg', 'Dennis Peterson', 'Jan 30, 2023', 'blog-author-3.jpg'],
   ]
   main.innerHTML = ''
   for (let i of meals) {
@@ -178,15 +176,18 @@ function goToBlogDetails(i) {
 
 // Function to load blog on Blog Details page
 function loadBlogDetails() {
-  var blogDetails = [['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Amelia Edwards', 'Oct 31, 2022', 'blog-author-2.jpg',"I recently had the pleasure of trying out a new recipe that I had never attempted before - Cedar-Plank Salmon. I had heard about this cooking method before, but I had never tried it myself. As a lover of salmon, I was excited to give it a try and see how it turned out. The first step was to soak the cedar plank in water for at least an hour, which helps to prevent it from catching on fire while on the grill. While the plank was soaking, I prepared the salmon by seasoning it with salt, pepper, and some lemon juice. Once the plank was ready, I placed the salmon on top of it and set it on the grill. As the salmon cooked, I couldn't help but notice the delicious aroma that was filling the air. The cedar plank imparted a subtle smoky flavor to the fish, and the heat from the grill cooked it to perfection. I also added some asparagus to the grill to serve as a side dish, which helped to balance out the richness of the salmon. When the salmon was done cooking, I carefully removed it from the grill and placed it on a platter. The presentation was beautiful - the salmon was perfectly cooked and had a beautiful pink color, and the asparagus was nicely charred and tender. I garnished the dish with some chopped herbs and a squeeze of lemon juice. When it came time to eat, I couldn't wait to dig in. The salmon was tender and flavorful, with a subtle smoky taste that was truly delicious. The asparagus was the perfect complement, adding a nice crunch and a fresh, bright flavor to the dish. Overall, my experience making Cedar-Plank Salmon was a success."]]
+  var blogDetails = [
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Amelia Edwards', 'Oct 31, 2022', 'blog-author-2.jpg', "I recently had the pleasure of trying out a new recipe that I had never attempted before - Cedar-Plank Salmon. I had heard about this cooking method before, but I had never tried it myself. As a lover of salmon, I was excited to give it a try and see how it turned out. The first step was to soak the cedar plank in water for at least an hour, which helps to prevent it from catching on fire while on the grill. While the plank was soaking, I prepared the salmon by seasoning it with salt, pepper, and some lemon juice. Once the plank was ready, I placed the salmon on top of it and set it on the grill. As the salmon cooked, I couldn't help but notice the delicious aroma that was filling the air. The cedar plank imparted a subtle smoky flavor to the fish, and the heat from the grill cooked it to perfection. I also added some asparagus to the grill to serve as a side dish, which helped to balance out the richness of the salmon. When the salmon was done cooking, I carefully removed it from the grill and placed it on a platter. The presentation was beautiful - the salmon was perfectly cooked and had a beautiful pink color, and the asparagus was nicely charred and tender. I garnished the dish with some chopped herbs and a squeeze of lemon juice. When it came time to eat, I couldn't wait to dig in. The salmon was tender and flavorful, with a subtle smoky taste that was truly delicious. The asparagus was the perfect complement, adding a nice crunch and a fresh, bright flavor to the dish. Overall, my experience making Cedar-Plank Salmon was a success."], 
+    ['Chicken Bacon Ranch Pasta', 'Chicken Bacon Ranch Pasta.jpeg', 'Dennis Peterson', 'Jan 30, 2023', 'blog-author-3.jpg',"This recipe is perfect for a quick and easy weeknight meal that is both delicious and satisfying. The combination of bacon and ranch dressing is a classic flavor pairing that adds a creamy, savory element to the dish, while the chicken adds protein and makes it a well-rounded meal. Plus, it's a great way to use up any leftover chicken or bacon that you may have in your fridge. So the next time you're looking for a tasty pasta recipe to add to your rotation, give this chicken bacon ranch pasta a try - your taste buds will thank you!"],
+  ]
   var meal = sessionStorage.getItem('meal')
   var main = document.getElementById('blog-contents')
   main.innerHTML = ''
-  for (let i of blogDetails){
-    if(i[0] == meal){
+  for (let i of blogDetails) {
+    if (i[0] == meal) {
       main.innerHTML += `
       <div class="post-img">
-      <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
+      <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid w-100">
     </div>
   
     <h2 class="title">${i[0]}</h2>
