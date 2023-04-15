@@ -1,12 +1,13 @@
+// Function to open Cart modal on Restaurant page
 function openModal() {
-    if (cart.length != 0) {
-      var modal = document.getElementById('purchaseModal');
-      var totalInput = document.getElementById('totalPrice');
-      totalInput.innerHTML = document.getElementById('totalBadge').innerHTML;
-      var cartList = document.getElementById('loadCart');
-      cartList.innerHTML = '';
-      for (var i = 0; i < cart.length; i++) {
-        cartList.innerHTML += `<div class="item">
+  if (cart.length != 0) {
+    var modal = document.getElementById('purchaseModal');
+    var totalInput = document.getElementById('totalPrice');
+    totalInput.innerHTML = document.getElementById('totalBadge').innerHTML;
+    var cartList = document.getElementById('loadCart');
+    cartList.innerHTML = '';
+    for (var i = 0; i < cart.length; i++) {
+      cartList.innerHTML += `<div class="item">
                       <span class="price">\$${parseFloat(cart[i][1]) * parseInt(cart[i][2])}</span>
                       <div class="d-flex">
                         <img src="${cart[i][3]}" style="width: 50px; border-radius: 50px; margin-right: 10px;"/>
@@ -15,52 +16,55 @@ function openModal() {
                         </div>
                       
                     </div>`
-      }
-      modal.style.display = 'block';
+    }
+    modal.style.display = 'block';
+  }
+}
+
+// Function to close Cart modal on Restaurant page
+function closeModal() {
+  var modal = document.getElementById('purchaseModal');
+  modal.style.display = 'none';
+}
+
+// Function to add meal to cart on Restaurant page
+function addToCart() {
+  total = 0
+  cart = []
+  var checkboxes = document.getElementsByClassName('checkbox');
+  for (var i in checkboxes) {
+    if (checkboxes[i].checked) {
+      var dets = checkboxes[i].parentElement.getElementsByClassName('productDetails');
+      var price = parseFloat(dets[2].innerHTML.match(/[\d\.]+/))
+      var quantity = parseInt(dets[3].value)
+      cart.push([dets[1].innerHTML, parseFloat(dets[2].innerHTML.match(/[\d\.]+/)), dets[3].value, dets[0].src])
+      total += price * quantity
     }
   }
-  
-  function closeModal() {
-    var modal = document.getElementById('purchaseModal');
-    modal.style.display = 'none';
-  }
+  console.log(cart)
+  totalBadge.innerHTML = '$' + total
+}
 
-  function addToCart() {
-    total = 0
-    cart = []
-    var checkboxes = document.getElementsByClassName('checkbox');
-    for (var i in checkboxes) {
-      if (checkboxes[i].checked) {
-        var dets = checkboxes[i].parentElement.getElementsByClassName('productDetails');
-        var price = parseFloat(dets[2].innerHTML.match(/[\d\.]+/))
-        var quantity = parseInt(dets[3].value)
-        cart.push([dets[1].innerHTML, parseFloat(dets[2].innerHTML.match(/[\d\.]+/)), dets[3].value, dets[0].src])
-        total += price * quantity
-      }
-    }
-    console.log(cart)
-    totalBadge.innerHTML = '$' + total
-  }
-
-  function loadRestaurant() {
-    var main = document.getElementById('restaurant-items')
-    var meals = [
-      ['Crisp Roast Duck', 50, 'meal1.webp'],
-      ['Leg of Lamb With Garlic and Rosemary', 70, 'meal2.webp'],
-      ['Creamy Leek Soup', 40, 'meal3.webp'],
-      ['Empanada Dough', 30, 'meal4.webp'], 
-      ['Lemon Curd', 25, 'meal5.webp'], 
-      ['Lemony Risotto With Asparagus and Shrimp', 75, 'meal6.webp'], 
-      ['Bouillabaisse', 65, 'meal7.webp'], 
-      ['Turkey Meatloaf', 55, 'meal8.webp'],
-      ['Cha Gio', 25, 'meal9.webp'],
-      ['Chicken Marsala', 48, 'meal10.webp'],
-      ['Chicken Tagine With Apricots and Almonds', 70, 'meal11.webp'],
-      ['Sticky Rice with Mango', 30, 'meal12.webp'],
+// Function to load meals on Restaurant page
+function loadRestaurant() {
+  var main = document.getElementById('restaurant-items')
+  var meals = [
+    ['Crisp Roast Duck', 50, 'meal1.webp'],
+    ['Leg of Lamb With Garlic and Rosemary', 70, 'meal2.webp'],
+    ['Creamy Leek Soup', 40, 'meal3.webp'],
+    ['Empanada Dough', 30, 'meal4.webp'],
+    ['Lemon Curd', 25, 'meal5.webp'],
+    ['Lemony Risotto With Asparagus and Shrimp', 75, 'meal6.webp'],
+    ['Bouillabaisse', 65, 'meal7.webp'],
+    ['Turkey Meatloaf', 55, 'meal8.webp'],
+    ['Cha Gio', 25, 'meal9.webp'],
+    ['Chicken Marsala', 48, 'meal10.webp'],
+    ['Chicken Tagine With Apricots and Almonds', 70, 'meal11.webp'],
+    ['Sticky Rice with Mango', 30, 'meal12.webp'],
   ]
-    main.innerHTML = ''
-    for (let i of meals) {
-      main.innerHTML += `
+  main.innerHTML = ''
+  for (let i of meals) {
+    main.innerHTML += `
     <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
         <form action="">
           <div class="card h-100 w-100 pb-4">
@@ -90,92 +94,96 @@ function openModal() {
         </form>
       </div>
     `
-    }
   }
+}
 
-  function loadCookbook() {
-    var main = document.getElementById('cookbook-items')
-    var meals = [
-      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-5.jpg'],
+// Function to load recipes on Cookbook page
+function loadCookbook() {
+  var main = document.getElementById('cookbook-items')
+  var meals = [
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-5.jpg'],
   ]
-    main.innerHTML = ''
-    for (let i of meals) {
-      main.innerHTML += `
-      <div class="col-xl-4 col-md-6">
-      <article onclick="goToBlogDetails(\'${i}\')">
-
-        <div class="post-img">
-          <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
-        </div>
-        <h2 class="title">
-          <a href="blog-details.html">${i[0]}</a>
-        </h2>
-
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author-list">${i[2]}</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">${i[3]}</time>
-            </p>
-          </div>
-        </div>
-
-      </article>
-    </div>
-    `
-    }
-  }
-
-  function loadBlog() {
-    var main = document.getElementById('blog-items')
-    var meals = [
-      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-2.jpg'],
-      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-3.jpg'],
-      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-4.jpg'],
-      ['Cedar-Plank Salmon','Cedar-Plank Salmon.jpeg','Dennis Peterson','Jan 30, 2022','blog-author-5.jpg'],
-  ]
-    main.innerHTML = ''
-    for (let i of meals) {
-      main.innerHTML += `
-      <div class="col-xl-4 col-md-6">
-      <article onclick="goToBlogDetails(\'${i}\')">
-
-        <div class="post-img">
-          <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
-        </div>
-        <h2 class="title">
-          <a href="blog-details.html">${i[0]}</a>
-        </h2>
-
-        <div class="d-flex align-items-center">
-          <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author-list">${i[2]}</p>
-            <p class="post-date">
-              <time datetime="2022-01-01">${i[3]}</time>
-            </p>
-          </div>
-        </div>
-
-      </article>
-    </div>
-    `
-    }
-  }
-
-  function goToBlogDetails(i){
-    sessionStorage.setItem('meal',i)
-    alert(i)
-    location.replace('blog-details.html')
-  }
-
-  function loadBlogDetails(){
-    var meal = JSON.parse(sessionStorage.getItem('meal'))
-    alert(meal)
-    var main = document.getElementById('blog-contents')
-    main.innerHTML = ''
+  main.innerHTML = ''
+  for (let i of meals) {
     main.innerHTML += `
+      <div class="col-xl-4 col-md-6">
+      <article onclick="goToBlogDetails(\'${i}\')">
+
+        <div class="post-img">
+          <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
+        </div>
+        <h2 class="title">
+          <a href="blog-details.html">${i[0]}</a>
+        </h2>
+
+        <div class="d-flex align-items-center">
+          <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
+          <div class="post-meta">
+            <p class="post-author-list">${i[2]}</p>
+            <p class="post-date">
+              <time datetime="2022-01-01">${i[3]}</time>
+            </p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+    `
+  }
+}
+
+// Function to load blogs on Blog page
+function loadBlog() {
+  var main = document.getElementById('blog-items')
+  var meals = [
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-2.jpg'],
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-3.jpg'],
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-4.jpg'],
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Dennis Peterson', 'Jan 30, 2022', 'blog-author-5.jpg'],
+  ]
+  main.innerHTML = ''
+  for (let i of meals) {
+    main.innerHTML += `
+      <div class="col-xl-4 col-md-6">
+      <article onclick="goToBlogDetails(\'${i}\')">
+
+        <div class="post-img">
+          <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
+        </div>
+        <h2 class="title">
+          <a href="blog-details.html">${i[0]}</a>
+        </h2>
+
+        <div class="d-flex align-items-center">
+          <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
+          <div class="post-meta">
+            <p class="post-author-list">${i[2]}</p>
+            <p class="post-date">
+              <time datetime="2022-01-01">${i[3]}</time>
+            </p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+    `
+  }
+}
+
+// Function to send data to blog details page
+function goToBlogDetails(i) {
+  sessionStorage.setItem('meal', i)
+  alert(i)
+  location.replace('blog-details.html')
+}
+
+// Function to load blog on Blog Details page
+function loadBlogDetails() {
+  var meal = JSON.parse(sessionStorage.getItem('meal'))
+  alert(meal)
+  var main = document.getElementById('blog-contents')
+  main.innerHTML = ''
+  main.innerHTML += `
     <div class="post-img">
     <img src="assets/img/blog/${meal[1]}" alt="" class="img-fluid">
   </div>
@@ -186,4 +194,4 @@ function openModal() {
     <p>${meal[1]}</p>
   </div>
   `
-  }
+}
