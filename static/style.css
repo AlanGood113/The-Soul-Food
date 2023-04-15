@@ -218,6 +218,56 @@ section {
 
 /* End Breadcrumbs */
 
+/* Cookbook */
+
+.cookbook .posts-list article {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cookbook .posts-list .post-img {
+  max-height: 240px;
+  margin: -30px -30px 15px -30px;
+  overflow: hidden;
+}
+
+
+.cookbook .posts-list .title {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.cookbook .posts-list .title a {
+  color: var(--color-default);
+  transition: 0.3s;
+}
+
+.cookbook .posts-list .title a:hover {
+  color: var(--color-primary);
+}
+
+.cookbook .posts-list .post-author-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.cookbook .posts-list .post-author-list {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.cookbook .posts-list .post-date {
+  font-size: 14px;
+  color: #3c3c3c;
+  margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 # Blog Posts List
 --------------------------------------------------------------*/
