@@ -106,15 +106,12 @@ function loadCookbook() {
   main.innerHTML = ''
   for (let i of meals) {
     main.innerHTML += `
-      <div class="col-xl-4 col-md-6">
-      <article onclick="goToBlogDetails(\'${i}\')">
-
+      <div onclick="goToRecipeDetails('${i[0]}')" class="col-xl-4 col-md-6">
+      <article>
         <div class="post-img">
           <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid">
         </div>
-        <h2 class="title">
-          <a href="blog-details.html">${i[0]}</a>
-        </h2>
+        <h2 class="title">${i[0]}</h2>
 
         <div class="d-flex align-items-center">
           <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
@@ -125,10 +122,67 @@ function loadCookbook() {
             </p>
           </div>
         </div>
-
       </article>
     </div>
     `
+  }
+}
+
+// Function to send data to recipe details page
+function goToRecipeDetails(i){
+  sessionStorage.setItem('recipe', i)
+  location.replace('recipe-details.html')
+}
+
+// Function to load recipe on Recipe details page
+function loadRecipeDetails(){
+  var recipeDetails = [
+    ['Cedar-Plank Salmon', 'Cedar-Plank Salmon.jpeg', 'Amelia Edwards', 'Oct 31, 2022', 'blog-author-2.jpg', "I recently had the pleasure of trying out a new recipe that I had never attempted before - Cedar-Plank Salmon. I had heard about this cooking method before, but I had never tried it myself. As a lover of salmon, I was excited to give it a try and see how it turned out. The first step was to soak the cedar plank in water for at least an hour, which helps to prevent it from catching on fire while on the grill. While the plank was soaking, I prepared the salmon by seasoning it with salt, pepper, and some lemon juice. Once the plank was ready, I placed the salmon on top of it and set it on the grill. As the salmon cooked, I couldn't help but notice the delicious aroma that was filling the air. The cedar plank imparted a subtle smoky flavor to the fish, and the heat from the grill cooked it to perfection. I also added some asparagus to the grill to serve as a side dish, which helped to balance out the richness of the salmon. When the salmon was done cooking, I carefully removed it from the grill and placed it on a platter. The presentation was beautiful - the salmon was perfectly cooked and had a beautiful pink color, and the asparagus was nicely charred and tender. I garnished the dish with some chopped herbs and a squeeze of lemon juice. When it came time to eat, I couldn't wait to dig in. The salmon was tender and flavorful, with a subtle smoky taste that was truly delicious. The asparagus was the perfect complement, adding a nice crunch and a fresh, bright flavor to the dish. Overall, my experience making Cedar-Plank Salmon was a success."],
+    ['Chicken Bacon Ranch Pasta', 'Chicken Bacon Ranch Pasta.jpeg', 'Kyle McDowel', 'Jan 30, 2023', 'blog-author-3.jpg', "This recipe is perfect for a quick and easy weeknight meal that is both delicious and satisfying. The combination of bacon and ranch dressing is a classic flavor pairing that adds a creamy, savory element to the dish, while the chicken adds protein and makes it a well-rounded meal. Plus, it's a great way to use up any leftover chicken or bacon that you may have in your fridge. So the next time you're looking for a tasty pasta recipe to add to your rotation, give this chicken bacon ranch pasta a try - your taste buds will thank you!"],
+    ['Crab Cakes', 'Crab Cakes.jpeg', 'Jane Doe', 'Feb 20, 2023', 'blog-author-4.jpg', `As a seafood lover, I have always been intrigued by crab cakes. But for some reason, I had never attempted to make them myself. That is, until recently when I decided to try my hand at this classic dish. In this blog post, I will share my experience making crab cakes for the first time, along with a delicious and easy recipe that I found.
+
+    I started by researching various crab cake recipes online and settled on one that seemed simple and straightforward. The recipe called for fresh lump crab meat, breadcrumbs, mayonnaise, Dijon mustard, Worcestershire sauce, Old Bay seasoning, onion, celery, parsley, egg, and salt and pepper. I purchased all the ingredients and got to work.
+    The first step was to pick through the crab meat to remove any shells or cartilage. I found this to be a bit time-consuming, but it was important to ensure that the crab cakes would be free of any unwanted bits.
+    Next, I mixed together the breadcrumbs, mayonnaise, Dijon mustard, Worcestershire sauce, Old Bay seasoning, onion, celery, parsley, and egg in a large mixing bowl. Once the mixture was well-combined, I gently folded in the crab meat, being careful not to overmix.
+    I then formed the mixture into patties and heated up a skillet with some olive oil. Once the oil was hot, I added the crab cakes to the pan and cooked them for a few minutes on each side until they were golden brown and crispy.
+    I served the crab cakes with a side of homemade tartar sauce and a squeeze of fresh lemon juice. The end result was simply delicious! The crab cakes were crispy on the outside and tender on the inside, with a delicate flavor that perfectly complemented the sweet crab meat.
+    Tips and Variations:
+    * If you prefer a spicier flavor, try adding some chopped jalapenos or red pepper flakes to the crab cake mixture.
+    * You can also experiment with different types of crab meat, such as jumbo lump or claw meat, depending on your preference and budget.
+    * To make the crab cakes ahead of time, prepare the mixture up to step 5, then cover and refrigerate for up to 24 hours before cooking.
+    
+    Making crab cakes for the first time was a fun and rewarding experience. I was surprised at how easy the recipe was to follow, and the end result was simply delicious. If you are a seafood lover like me, I highly recommend giving this recipe a try. It's a great way to impress your friends and family at your next dinner party or simply to treat yourself to a delicious and satisfying meal.`],
+    ['Strawberry Cheesecake', 'Strawberry Cheesecake.jpeg', 'John Doe', 'Apr 2, 2023', 'blog-author-5.jpg', `As someone with a major sweet tooth, I have always been a fan of cheesecake. Recently, I decided to take my love for this classic dessert to the next level and try making a strawberry cheesecake from scratch. In this blog post, I will share my experience making this delicious and creamy dessert, along with the recipe that I used.
+
+  I started by researching various strawberry cheesecake recipes online and settled on one that seemed easy and straightforward. The recipe called for graham cracker crumbs, sugar, butter, cream cheese, sour cream, eggs, vanilla extract, fresh strawberries, and whipped cream. I purchased all the ingredients and got to work.
+  The first step was to make the crust. I combined graham cracker crumbs, sugar, and melted butter in a mixing bowl and then pressed the mixture into the bottom of a springform pan. I pre-baked the crust in the oven for a few minutes and then let it cool while I prepared the filling.
+  Next, I made the filling by beating together cream cheese, sugar, and sour cream in a large mixing bowl until the mixture was smooth and creamy. I then added in eggs, one at a time, followed by vanilla extract and pureed strawberries. Once the mixture was well-combined, I poured it into the prepared crust.
+  I baked the cheesecake in the oven for about an hour until it was set but still slightly jiggly in the center. I let it cool to room temperature and then placed it in the refrigerator to chill for a few hours.
+  Before serving, I topped the cheesecake with whipped cream and fresh strawberries, and it was simply delicious! The crust was crisp and buttery, while the filling was creamy and bursting with fresh strawberry flavor.
+  Tips and Variations:
+  * If you don't have fresh strawberries, you can use frozen strawberries instead. Just be sure to thaw and drain them before using.
+  * To make the cheesecake ahead of time, prepare the crust and filling, but wait to bake until you're ready to serve. The cheesecake will keep in the refrigerator for up to 3 days.
+  * You can also experiment with different types of crusts, such as Oreo or chocolate graham cracker, for a fun twist on the classic recipe.
+  
+  Making a strawberry cheesecake from scratch was a fun and rewarding experience. While it took some time and effort, the end result was well worth it. If you're a fan of cheesecake and strawberries, I highly recommend giving this recipe a try. It's the perfect dessert to impress your friends and family at your next gathering or simply to treat yourself to a sweet and creamy indulgence.`]
+  ]
+  var recipe = sessionStorage.getItem('recipe')
+  var main = document.getElementById('recipe-contents')
+  main.innerHTML = ''
+  for (let i of recipeDetails) {
+    if (i[0] == recipe) {
+      main.innerHTML += `
+      <div class="post-img">
+      <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid w-100">
+    </div>
+  
+    <h2 class="title">${i[0]}</h2>
+  
+    <div class="content">
+      <p>${i[5]}</p>
+    </div>
+    `
+    }
   }
 }
 
@@ -144,16 +198,12 @@ function loadBlog() {
   main.innerHTML = ''
   for (let i of meals) {
     main.innerHTML += `
-      <div class="col-xl-4 col-md-6">
-      <article onclick="goToBlogDetails('${i[0]}')">
-
+      <div onclick="goToBlogDetails('${i[0]}')" class="col-xl-4 col-md-6">
+      <article>
         <div class="post-img">
           <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid" style="min-width:100%;height:320px;">
         </div>
-        <h2 class="title">
-          <a href="blog-details.html">${i[0]}</a>
-        </h2>
-
+        <h2 class="title">${i[0]}</h2>
         <div class="d-flex align-items-center">
           <img src="assets/img/blog/${i[4]}" alt="" class="img-fluid post-author-img flex-shrink-0">
           <div class="post-meta">
@@ -163,7 +213,6 @@ function loadBlog() {
             </p>
           </div>
         </div>
-
       </article>
     </div>
     `
@@ -172,7 +221,7 @@ function loadBlog() {
 
 // Function to send data to blog details page
 function goToBlogDetails(i) {
-  sessionStorage.setItem('meal', i)
+  sessionStorage.setItem('blog', i)
   location.replace('blog-details.html')
 }
 
@@ -208,11 +257,11 @@ function loadBlogDetails() {
   
   Making a strawberry cheesecake from scratch was a fun and rewarding experience. While it took some time and effort, the end result was well worth it. If you're a fan of cheesecake and strawberries, I highly recommend giving this recipe a try. It's the perfect dessert to impress your friends and family at your next gathering or simply to treat yourself to a sweet and creamy indulgence.`]
   ]
-  var meal = sessionStorage.getItem('meal')
+  var blog = sessionStorage.getItem('blog')
   var main = document.getElementById('blog-contents')
   main.innerHTML = ''
   for (let i of blogDetails) {
-    if (i[0] == meal) {
+    if (i[0] == blog) {
       main.innerHTML += `
       <div class="post-img">
       <img src="assets/img/blog/${i[1]}" alt="" class="img-fluid w-100">

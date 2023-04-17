@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>The Soul Food</title>
+
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body onload="loadRecipeDetails()">
+
+    <div class="menu-bar">
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cookbook.html">Cookbook</a></li>
+            <li>Recipe Details</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="recipe" class="recipe">
+      <div class="container">
+        <article id="recipe-contents" class="recipe-details">
+
+
+
+        </article>
+        <div class="comments">
+
+          <div id="comment-1" class="comment">
+            <div class="d-flex">
+              <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+              <div>
+                <h5>Georgia Reader</h5>
+                <time datetime="2020-01-01">01 Jan,2022</time>
+                <p>
+                  Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
+                  molestiae est qui cum soluta.
+                  Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="comment-2" class="comment">
+            <div class="d-flex">
+              <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+              <div>
+                <h5>Aron Alvarado</h5>
+                <time datetime="2020-01-01">01 Jan,2022</time>
+                <p>
+                  Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
+                  beatae.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reply-form">
+
+            <h4>Leave a Comment</h4>
+            <br>
+            <form action="">
+              <div class="row">
+                <div class="form-group">
+                  <input name="name" type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="col form-group">
+                  <textarea name="comment" class="form-control" placeholder="Your Comment"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Post Comment</button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+<script src="static/script.js"></script>
+</body>
+
+</html>

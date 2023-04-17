@@ -352,6 +352,38 @@ section {
   font-weight: bold;
 }
 
+/* Recipe Details */
+
+.recipe .recipe-details {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.recipe .recipe-details .post-img {
+  margin: -30px -30px 20px -30px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.recipe .recipe-details .title {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0;
+  margin: 20px 0 0 0;
+  color: var(--color-default);
+}
+
+.recipe .recipe-details .content {
+  margin-top: 20px;
+}
+
+.recipe .recipe-details .content h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 # Blog Comments
 --------------------------------------------------------------*/
