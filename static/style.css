@@ -58,7 +58,7 @@ a {
   text-align: center;
 }
 
-.hero .box .title a {
+.hero .box .title  {
   color: #fff;
   transition: 0.3s;
 }
@@ -382,6 +382,91 @@ section {
   font-size: 22px;
   margin-top: 30px;
   font-weight: bold;
+}
+
+/* Recipe Comments */
+
+.recipe .comments {
+  margin-top: 30px;
+}
+
+
+.recipe .comments .comment {
+  margin-top: 30px;
+  position: relative;
+}
+
+.recipe .comments .comment .comment-img {
+  margin-right: 14px;
+}
+
+.recipe .comments .comment .comment-img img {
+  width: 60px;
+}
+
+.recipe .comments .comment h5 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.recipe .comments .comment time {
+  display: block;
+  font-size: 14px;
+  color: rgba(34, 34, 34, 0.8);
+  margin-bottom: 5px;
+}
+
+.recipe .comments .comment.comment-reply {
+  padding-left: 40px;
+}
+
+.recipe .comments .reply-form {
+  margin-top: 30px;
+  padding: 30px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.recipe .comments .reply-form h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.recipe .comments .reply-form input {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+}
+
+.recipe .comments .reply-form input:focus {
+  box-shadow: none;
+  border-color: rgba(0, 131, 116, 0.8);
+}
+
+.recipe .comments .reply-form textarea {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+}
+
+.recipe .comments .reply-form textarea:focus {
+  box-shadow: none;
+  border-color: rgba(0, 131, 116, 0.8);
+}
+
+.recipe .comments .reply-form .form-group {
+  margin-bottom: 25px;
+}
+
+.recipe .comments .reply-form .btn-primary {
+  border-radius: 50px;
+  padding: 14px 40px;
+  border: 0;
+  background-color: var(--color-secondary);
+}
+
+.recipe .comments .reply-form .btn-primary:hover {
+  background-color: rgba(248, 90, 64, 0.8);
 }
 
 /*--------------------------------------------------------------

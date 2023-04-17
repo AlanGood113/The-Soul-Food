@@ -131,7 +131,7 @@ function loadCookbook() {
 // Function to send data to recipe details page
 function goToRecipeDetails(i){
   sessionStorage.setItem('recipe', i)
-  location.replace('recipe-details.html')
+  location.href = 'recipe-details.html'
 }
 
 // Function to load recipe on Recipe details page
@@ -222,7 +222,7 @@ function loadBlog() {
 // Function to send data to blog details page
 function goToBlogDetails(i) {
   sessionStorage.setItem('blog', i)
-  location.replace('blog-details.html')
+  location.href = 'blog-details.html'
 }
 
 // Function to load blog on Blog Details page
