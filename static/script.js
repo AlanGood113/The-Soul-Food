@@ -102,7 +102,8 @@ function loadCookbook() {
   var main = document.getElementById('cookbook-items')
   var meals = [
     ['Spaghetti with Garlic, Olive Oil, and Chili Flakes', 'Spaghetti w Garlic.jpeg', 'Easy to make | Under 30 mins'],
-    ['Sheet Pan Chicken Fajitas','Sheet Pan Chicken Fajitas.jpeg','Gluten Free']
+    ['Sheet Pan Chicken Fajitas','Sheet Pan Chicken Fajitas.jpeg','Gluten Free'],
+    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg','Protein Packed'],
   ]
   main.innerHTML = ''
   for (let i of meals) {
@@ -180,10 +181,41 @@ function loadRecipeDetails(){
 <br>
 <h6>Instructions:</h6>
 1. Preheat oven to 400°F.
+<br>
 2. In a large bowl, toss together the chicken, peppers, and onion with olive oil, chili powder, paprika, garlic powder, salt, and pepper until everything is evenly coated.
+<br>
 3. Spread the mixture evenly onto a large baking sheet and bake for 20-25 minutes, or until the chicken is cooked through and the vegetables are tender.
+<br>
 4. Serve hot with warm tortillas, salsa, sour cream, and guacamole.
-    `,'https://www.youtube.com/embeded/BuVVCmrihU8']
+    `,'https://www.youtube.com/embed/BuVVCmrihU8'],
+    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg','Protein Packed',`<h6>Ingredients:</h6>
+&#x2022 1 pound salmon fillet
+<br>
+&#x2022 1 lemon, sliced
+<br>
+&#x2022 2 tablespoons olive oil
+<br>
+&#x2022 1 teaspoon dried thyme
+<br>
+&#x2022 1 teaspoon dried rosemary
+<br>
+&#x2022 Salt and pepper, to taste
+<br>
+<br>
+<h6>Instructions:</h6>
+1. Preheat oven to 400°F.
+<br>
+2. Place the salmon on a large sheet of aluminum foil.
+<br>
+3. Drizzle with olive oil and season with thyme, rosemary, salt, and pepper.
+<br>
+4. Arrange the lemon slices on top of the salmon.
+<br>
+5. Wrap the foil around the salmon to create a packet.
+<br>
+6. Place the packet on a baking sheet and bake for 15-20 minutes, or until the salmon is cooked through.
+<br>
+7. Serve hot, garnished with additional lemon wedges.`, 'https://www.youtube.com/embed/2uYoqclu6so']
   ]
   var recipe = sessionStorage.getItem('recipe')
   var main = document.getElementById('recipe-contents')
