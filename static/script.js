@@ -102,8 +102,8 @@ function loadCookbook() {
   var main = document.getElementById('cookbook-items')
   var meals = [
     ['Spaghetti with Garlic, Olive Oil, and Chili Flakes', 'Spaghetti w Garlic.jpeg', 'Easy to make | Under 30 mins'],
-    ['Sheet Pan Chicken Fajitas','Sheet Pan Chicken Fajitas.jpeg','Gluten Free'],
-    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg','Protein Packed'],
+    ['Sheet Pan Chicken Fajitas', 'Sheet Pan Chicken Fajitas.jpeg', 'Gluten Free'],
+    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg', 'Protein Packed'],
   ]
   main.innerHTML = ''
   for (let i of meals) {
@@ -122,13 +122,13 @@ function loadCookbook() {
 }
 
 // Function to send data to recipe details page
-function goToRecipeDetails(i){
+function goToRecipeDetails(i) {
   sessionStorage.setItem('recipe', i)
   location.href = 'recipe-details.html'
 }
 
 // Function to load recipe on Recipe details page
-function loadRecipeDetails(){
+function loadRecipeDetails() {
   var recipeDetails = [
     ['Spaghetti with Garlic, Olive Oil, and Chili Flakes', 'Spaghetti w Garlic.jpeg', 'Easy to make | Under 30 mins', `<h6>Ingredients:</h6>
     &#x2022 1 pound spaghetti
@@ -156,7 +156,7 @@ function loadRecipeDetails(){
     5. Season with salt and pepper to taste.
     <br>
     6. Serve hot, garnished with grated Parmesan cheese.`, 'https://www.youtube.com/embed/4KIiQdhp2wY'],
-    ['Sheet Pan Chicken Fajitas','Sheet Pan Chicken Fajitas.jpeg','Gluten Free',`
+    ['Sheet Pan Chicken Fajitas', 'Sheet Pan Chicken Fajitas.jpeg', 'Gluten Free', `
     <h6>Ingredients:</h6>
 &#x2022 1 pound boneless, skinless chicken breasts, sliced into strips
 <br>
@@ -187,8 +187,8 @@ function loadRecipeDetails(){
 3. Spread the mixture evenly onto a large baking sheet and bake for 20-25 minutes, or until the chicken is cooked through and the vegetables are tender.
 <br>
 4. Serve hot with warm tortillas, salsa, sour cream, and guacamole.
-    `,'https://www.youtube.com/embed/BuVVCmrihU8'],
-    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg','Protein Packed',`<h6>Ingredients:</h6>
+    `, 'https://www.youtube.com/embed/BuVVCmrihU8'],
+    ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg', 'Protein Packed', `<h6>Ingredients:</h6>
 &#x2022 1 pound salmon fillet
 <br>
 &#x2022 1 lemon, sliced

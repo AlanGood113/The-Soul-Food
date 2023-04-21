@@ -1,3 +1,5 @@
+/* Initialization */
+
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Roboto&display=swap');
 
 :root {
@@ -22,7 +24,7 @@ a {
   text-decoration: none;
 }
 
-
+/* End Initialization */
 
 /* Hero */
 
@@ -76,6 +78,7 @@ a {
 /* End Hero */
 
 /* Contact Section */
+
 .contact .box {
   padding: 30px 30px;
   position: relative;
@@ -126,6 +129,7 @@ a {
 
 /* End Contact Section */
 
+
 /* Section Styles*/
 
 section {
@@ -159,6 +163,7 @@ section {
 }
 
 /* End Section Styles */
+
 
 /* Breadcrumbs */
 
@@ -218,6 +223,7 @@ section {
 
 /* End Breadcrumbs */
 
+
 /* Cookbook */
 
 .cookbook .posts-list article {
@@ -268,89 +274,7 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Blog Posts List
---------------------------------------------------------------*/
-.blog .posts-list article {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.blog .posts-list .post-img {
-  max-height: 240px;
-  margin: -30px -30px 15px -30px;
-  overflow: hidden;
-}
-
-
-.blog .posts-list .title {
-  font-size: 22px;
-  font-weight: 700;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-
-.blog .posts-list .title a {
-  color: var(--color-default);
-  transition: 0.3s;
-}
-
-.blog .posts-list .title a:hover {
-  color: var(--color-primary);
-}
-
-.blog .posts-list .post-author-img {
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.blog .posts-list .post-author-list {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.blog .posts-list .post-date {
-  font-size: 14px;
-  color: #3c3c3c;
-  margin-bottom: 0;
-}
-
-/*--------------------------------------------------------------
-# Blog Details
---------------------------------------------------------------*/
-.blog .blog-details {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-.blog .blog-details .post-img {
-  margin: -30px -30px 20px -30px;
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
-}
-
-.blog .blog-details .title {
-  font-size: 28px;
-  font-weight: 700;
-  padding: 0;
-  margin: 20px 0 0 0;
-  color: var(--color-default);
-}
-
-.blog .blog-details .content {
-  margin-top: 20px;
-}
-
-.blog .blog-details .content h3 {
-  font-size: 22px;
-  margin-top: 30px;
-  font-weight: bold;
-}
+/* End Cookbook */
 
 /* Recipe Details */
 
@@ -383,6 +307,8 @@ section {
   margin-top: 30px;
   font-weight: bold;
 }
+
+/* End Recipe Details */
 
 /* Recipe Comments */
 
@@ -469,9 +395,99 @@ section {
   background-color: rgba(248, 90, 64, 0.8);
 }
 
-/*--------------------------------------------------------------
-# Blog Comments
---------------------------------------------------------------*/
+/* End Recipe Comments */
+
+
+/* Blog */
+
+.blog .posts-list article {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog .posts-list .post-img {
+  max-height: 240px;
+  margin: -30px -30px 15px -30px;
+  overflow: hidden;
+}
+
+
+.blog .posts-list .title {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.blog .posts-list .title a {
+  color: var(--color-default);
+  transition: 0.3s;
+}
+
+.blog .posts-list .title a:hover {
+  color: var(--color-primary);
+}
+
+.blog .posts-list .post-author-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.blog .posts-list .post-author-list {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.blog .posts-list .post-date {
+  font-size: 14px;
+  color: #3c3c3c;
+  margin-bottom: 0;
+}
+
+/* End Blog */
+
+
+/* Blog Details */
+
+.blog .blog-details {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.blog .blog-details .post-img {
+  margin: -30px -30px 20px -30px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.blog .blog-details .title {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0;
+  margin: 20px 0 0 0;
+  color: var(--color-default);
+}
+
+.blog .blog-details .content {
+  margin-top: 20px;
+}
+
+.blog .blog-details .content h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* End Blog Details */
+
+
+/* Blog Comments */
+
 .blog .comments {
   margin-top: 30px;
 }
@@ -554,8 +570,10 @@ section {
 .blog .comments .reply-form .btn-primary:hover {
   background-color: rgba(248, 90, 64, 0.8);
 }
+/* End Blog Comments */
 
 
+/* Restaurant */
 
 #purchaseModal {
   display: none;
@@ -684,3 +702,5 @@ section {
   .payment-form .card-details button {
     margin-top: 2em;
   }
+
+  /* End Restaurant */
