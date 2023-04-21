@@ -9,39 +9,44 @@
   <link rel="stylesheet" href="static/style.css">
 </head>
 
+<!-- The loadBlog function displays all the blogs when the page loads -->
 <body onload="loadBlog()">
-    <div class="menu-bar">
-      <nav>
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Blog</li>
-          </ol>
-        </div>
-      </nav>
-      <div class="page-header d-flex align-items-center">
-        <div class="container position-relative">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-6 text-center">
-              <h2>The Soul Food</h2>
-              <br>
-              <h4 class="roboto" style="color: white;">Blog</h4>
-            </div>
+
+  <!-- Breadcrumbs Bar -->
+  <div class="menu-bar">
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ol>
+      </div>
+    </nav>
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>The Soul Food</h2>
+            <br>
+            <h4 class="roboto" style="color: white;">Blog</h4>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <!-- End Breadcrumbs Bar -->
 
-    <section id="blog" class="blog">
-      <div class="container">
-        <div id="blog-items" class="row gy-4 posts-list">
-        </div>
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <!-- Section where blogs are displayed -->
+      <div id="blog-items" class="row gy-4 posts-list">
       </div>
-    </section>
+    </div>
+  </section>
+  <!-- End Blog Section -->
 
   <script src="static/bootstrap.min.js"></script>
   <script src="static/script.js"></script>
-
 </body>
-
 </html>
