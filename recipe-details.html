@@ -11,83 +11,87 @@
   <link rel="stylesheet" href="static/style.css">
 </head>
 
+<!-- loadRecipeDetails function gets the recipe from session storage when the page loads -->
+
 <body onload="loadRecipeDetails()">
-
-    <div class="menu-bar">
-      <nav>
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cookbook.html">Cookbook</a></li>
-            <li>Recipe Details</li>
-          </ol>
-        </div>
-      </nav>
-    </div>
-
-    <section id="recipe" class="recipe">
+  <!-- Breadcrumbs Bar -->
+  <div class="menu-bar">
+    <nav>
       <div class="container">
-        <article id="recipe-contents" class="recipe-details">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cookbook.html">Cookbook</a></li>
+          <li>Recipe Details</li>
+        </ol>
+      </div>
+    </nav>
+  </div>
+  <!-- End Breadcrumbs Bar -->
 
+  <!-- Recipe Details Section -->
+  <section id="recipe" class="recipe">
+    <div class="container">
+      <!-- Section where recipe details are displayed -->
+      <article id="recipe-contents" class="recipe-details">
+      </article>
 
+      <!-- Recipe Comments -->
+      <div class="comments">
 
-        </article>
-        <div class="comments">
-
-          <div id="comment-1" class="comment">
-            <div class="d-flex">
-              <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
-              <div>
-                <h5>Georgia Reader</h5>
-                <time datetime="2020-01-01">01 Jan,2022</time>
-                <p>
-                  Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
-                  molestiae est qui cum soluta.
-                  Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                </p>
-              </div>
+        <!-- Comments -->
+        <div id="comment-1" class="comment">
+          <div class="d-flex">
+            <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+            <div>
+              <h5>Georgia Reader</h5>
+              <time datetime="2020-01-01">01 Jan,2022</time>
+              <p>
+                Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
+                molestiae est qui cum soluta.
+                Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+              </p>
             </div>
           </div>
+        </div>
 
-          <div id="comment-2" class="comment">
-            <div class="d-flex">
-              <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-              <div>
-                <h5>Aron Alvarado</h5>
-                <time datetime="2020-01-01">01 Jan,2022</time>
-                <p>
-                  Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
-                  beatae.
-                </p>
-              </div>
+        <div id="comment-2" class="comment">
+          <div class="d-flex">
+            <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+            <div>
+              <h5>Aron Alvarado</h5>
+              <time datetime="2020-01-01">01 Jan,2022</time>
+              <p>
+                Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
+                beatae.
+              </p>
             </div>
           </div>
+        </div>
+        <!-- End Comments -->
 
-          <div class="reply-form">
-
-            <h4>Leave a Comment</h4>
-            <br>
-            <form action="">
-              <div class="row">
-                <div class="form-group">
-                  <input name="name" type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="col form-group">
-                  <textarea name="comment" class="form-control" placeholder="Your Comment"></textarea>
-                </div>
+        <!-- Reply Form -->
+        <div class="reply-form">
+          <h4>Leave a Comment</h4>
+          <br>
+          <form action="">
+            <div class="row">
+              <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Your Name">
               </div>
-              <button type="submit" class="btn btn-primary">Post Comment</button>
-
-            </form>
-
-          </div>
-
+              <div class="col form-group">
+                <textarea name="comment" class="form-control" placeholder="Your Comment"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+          </form>
         </div>
       </div>
-    </section>
+      <!-- End Recipe Comments -->
+    </div>
+  </section>
+  <!-- End Recipe Details Section -->
 
 
-<script src="static/script.js"></script>
+  <script src="static/script.js"></script>
 </body>
-
 </html>
