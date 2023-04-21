@@ -11,83 +11,87 @@
   <link rel="stylesheet" href="static/style.css">
 </head>
 
+
 <body onload="loadBlogDetails()">
 
-    <div class="menu-bar">
-      <nav>
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li>Blog Details</li>
-          </ol>
-        </div>
-      </nav>
-    </div>
-
-    <section id="blog" class="blog">
+  <!-- Breadcrumbs Bar -->
+  <div class="menu-bar">
+    <nav>
       <div class="container">
-        <article id="blog-contents" class="blog-details">
-
-
-
-        </article>
-        <div class="comments">
-
-          <div id="comment-1" class="comment">
-            <div class="d-flex">
-              <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
-              <div>
-                <h5>Georgia Reader</h5>
-                <time datetime="2020-01-01">01 Jan,2022</time>
-                <p>
-                  Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
-                  molestiae est qui cum soluta.
-                  Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="comment-2" class="comment">
-            <div class="d-flex">
-              <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-              <div>
-                <h5>Aron Alvarado</h5>
-                <time datetime="2020-01-01">01 Jan,2022</time>
-                <p>
-                  Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
-                  beatae.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reply-form">
-
-            <h4>Leave a Comment</h4>
-            <br>
-            <form action="">
-              <div class="row">
-                <div class="form-group">
-                  <input name="name" type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="col form-group">
-                  <textarea name="comment" class="form-control" placeholder="Your Comment"></textarea>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary">Post Comment</button>
-
-            </form>
-
-          </div>
-
-        </div>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li>Blog Details</li>
+        </ol>
       </div>
-    </section>
+    </nav>
+  </div>
+  <!-- End Breadcrumbs Bar -->
+
+  <!-- Blog Details Section -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <!-- Section where blog details are displayed -->
+      <article id="blog-contents" class="blog-details">
+      </article>
+
+      <!-- Blog comments -->
+      <div class="comments">
+
+        <!-- Comments -->
+        <div id="comment-1" class="comment">
+          <div class="d-flex">
+            <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+            <div>
+              <h5>Georgia Reader</h5>
+              <time datetime="2020-01-01">01 Jan,2022</time>
+              <p>
+                Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
+                molestiae est qui cum soluta.
+                Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="comment-2" class="comment">
+          <div class="d-flex">
+            <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+            <div>
+              <h5>Aron Alvarado</h5>
+              <time datetime="2020-01-01">01 Jan,2022</time>
+              <p>
+                Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
+                beatae.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reply Form -->
+        <div class="reply-form">
+          <h4>Leave a Comment</h4>
+          <br>
+          <form action="">
+            <div class="row">
+              <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="col form-group">
+                <textarea name="comment" class="form-control" placeholder="Your Comment"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End Blog Details Section -->
 
 
-<script src="static/script.js"></script>
+  <script src="static/script.js"></script>
 </body>
 
 </html>
