@@ -155,7 +155,13 @@ function loadRecipeDetails() {
     <br>
     5. Season with salt and pepper to taste.
     <br>
-    6. Serve hot, garnished with grated Parmesan cheese.`, 'https://www.youtube.com/embed/4KIiQdhp2wY'],
+    6. Serve hot, garnished with grated Parmesan cheese.`, 
+    'https://www.youtube.com/embed/4KIiQdhp2wY', 
+    `<i class="fa fa-star clicked"></i>
+    <i class="fa fa-star clicked"></i>
+    <i class="fa fa-star clicked"></i>
+    <i class="fa fa-star clicked"></i>
+    <i class="fa fa-star"></i>`],
     ['Sheet Pan Chicken Fajitas', 'Sheet Pan Chicken Fajitas.jpeg', 'Gluten Free', `
     <h6>Ingredients:</h6>
 &#x2022 1 pound boneless, skinless chicken breasts, sliced into strips
@@ -186,8 +192,13 @@ function loadRecipeDetails() {
 <br>
 3. Spread the mixture evenly onto a large baking sheet and bake for 20-25 minutes, or until the chicken is cooked through and the vegetables are tender.
 <br>
-4. Serve hot with warm tortillas, salsa, sour cream, and guacamole.
-    `, 'https://www.youtube.com/embed/BuVVCmrihU8'],
+4. Serve hot with warm tortillas, salsa, sour cream, and guacamole.`, 
+'https://www.youtube.com/embed/BuVVCmrihU8',
+`<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>`],
     ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg', 'Protein Packed', `<h6>Ingredients:</h6>
 &#x2022 1 pound salmon fillet
 <br>
@@ -215,7 +226,13 @@ function loadRecipeDetails() {
 <br>
 6. Place the packet on a baking sheet and bake for 15-20 minutes, or until the salmon is cooked through.
 <br>
-7. Serve hot, garnished with additional lemon wedges.`, 'https://www.youtube.com/embed/2uYoqclu6so']
+7. Serve hot, garnished with additional lemon wedges.`, 
+'https://www.youtube.com/embed/2uYoqclu6so',
+`<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>`]
   ]
   var recipe = sessionStorage.getItem('recipe')
   var main = document.getElementById('recipe-contents')
@@ -230,6 +247,9 @@ function loadRecipeDetails() {
     <h2 class="title">${i[0]}</h2>
     <br>
     <h5>${i[2]}</h5>
+    <div class="rating">
+      ${i[5]}
+    </div>
     <hr>
   
     <div class="content">

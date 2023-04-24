@@ -308,6 +308,14 @@ section {
   font-weight: bold;
 }
 
+.rating {
+  font-size: 24px;
+}
+
+.clicked {
+  color: var(--color-secondary);
+}
+
 /* End Recipe Details */
 
 /* Recipe Comments */
