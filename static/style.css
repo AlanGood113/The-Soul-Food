@@ -75,6 +75,12 @@ a {
   }
 }
 
+@media (max-width: 500px) {
+  .contact-btn {
+    font-size: 14px;
+  }
+}
+
 /* End Hero */
 
 /* Contact Section */
