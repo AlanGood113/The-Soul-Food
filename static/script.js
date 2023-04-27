@@ -104,6 +104,9 @@ function loadCookbook() {
     ['Spaghetti with Garlic, Olive Oil, and Chili Flakes', 'Spaghetti w Garlic.jpeg', 'Easy to make | Under 30 mins'],
     ['Sheet Pan Chicken Fajitas', 'Sheet Pan Chicken Fajitas.jpeg', 'Gluten Free'],
     ['Lemon and Herb Roasted Salmon', 'LemonHerbRoastedSalmon.jpeg', 'Protein Packed'],
+    ['Lobster Risotto', 'Lobster Risotto.webp', 'Seafood'],
+    ['Truffle Mac and Cheese', 'Truffle MacnCheese.webp', 'Easy to make | 30 mins'],
+    ['Seared Foie Gras with Fig Compote', 'Seared Gras.jpeg', 'Quick make'],
   ]
   main.innerHTML = ''
   for (let i of meals) {
@@ -232,7 +235,125 @@ function loadRecipeDetails() {
 <i class="fa fa-star clicked"></i>
 <i class="fa fa-star clicked"></i>
 <i class="fa fa-star clicked"></i>
-<i class="fa fa-star clicked"></i>`]
+<i class="fa fa-star clicked"></i>`],
+['Lobster Risotto', 'Lobster Risotto.webp', 'Seafood', `<h6>Ingredients:</h6>
+&#x2022 1 1/2 cups Arborio rice
+<br>
+&#x2022 4 cups lobster or fish stock
+<br>
+&#x2022 1/2 cup dry white wine
+<br>
+&#x2022 2 tablespoons olive oil
+<br>
+&#x2022 1/4 cup unsalted butter
+<br>
+&#x2022 1/2 cup grated Parmesan cheese
+<br>
+&#x2022 2 tablespoons finely chopped shallots
+<br>
+&#x2022 1/4 cup heavy cream
+<br>
+&#x2022 1/2 lb cooked lobster meat
+<br>
+&#x2022 Salt and pepper to taste
+<br>
+<br>
+<h6>Instructions:</h6>
+1. In a large saucepan, heat the olive oil over medium heat. Add the shallots and cook until translucent.
+<br>
+2. Add the Arborio rice and stir to coat with the oil. Cook for 2-3 minutes.
+<br>
+3. Add the white wine and cook until the liquid is absorbed.
+<br>
+4. Add the lobster or fish stock, one cup at a time, stirring constantly until each cup is absorbed.
+<br>
+5. Once all the stock has been added, add the heavy cream and butter. Stir until the butter is melted.
+<br>
+6. Stir in the cooked lobster meat and Parmesan cheese. Season with salt and pepper to taste.
+<br>
+7. Serve hot.`, 
+'https://www.youtube.com/embed/1XFMA16yVus',
+`<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star"></i>`],
+['Truffle Mac and Cheese', 'Truffle MacnCheese.webp', 'Easy to make | 30 mins', `<h6>Ingredients:</h6>
+&#x2022 1 lb elbow macaroni
+<br>
+&#x2022 4 tablespoons unsalted butter
+<br>
+&#x2022 4 tablespoons all-purpose flour
+<br>
+&#x2022 4 cups whole milk
+<br>
+&#x2022 1/2 teaspoon ground nutmeg
+<br>
+&#x2022 1/4 teaspoon cayenne pepper
+<br>
+&#x2022 2 cups grated Gruyere cheese
+<br>
+&#x2022 1/2 cup grated Parmesan cheese
+<br>
+&#x2022 1/4 cup truffle oil
+<br>
+&#x2022 Salt and pepper to taste
+<br>
+<br>
+<h6>Instructions:</h6>
+1. Preheat oven to 375°F.
+<br>
+2. Cook the macaroni according to the package instructions.
+<br>
+3. In a large saucepan, melt the butter over medium heat. Add the flour and whisk until smooth.
+<br>
+4. Slowly whisk in the milk, nutmeg, and cayenne pepper. Cook for 5-7 minutes, whisking constantly, until the sauce thickens.
+<br>
+5. Stir in the Gruyere cheese until melted.
+<br>
+6. Add the cooked macaroni to the sauce and stir until well combined.
+<br>
+7. Pour the mac and cheese into a baking dish. Drizzle with truffle oil and sprinkle with Parmesan cheese.
+<br>
+8. Bake for 25-30 minutes, until the top is golden brown.
+<br>
+9. Serve hot.`, 
+'https://www.youtube.com/embed/TTh9gXLyyrM',
+`<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star"></i>`],
+['Seared Foie Gras with Fig Compote', 'Seared Gras.jpeg', 'Quick make', `<h6>Ingredients:</h6>
+&#x2022 Salt and pepper to taste
+<br>
+&#x2022 4 slices foie gras, about 2 oz each
+<br>
+&#x2022 1/2 cup fig jam
+<br>
+&#x2022 1/4 cup white wine
+<br>
+&#x2022 1 tablespoon red wine vinegar
+<br>
+&#x2022 1/4 teaspoon ground cinnamon
+<br>
+&#x2022 Salt and pepper to taste
+<br>
+<br>
+<h6>Instructions:</h6>
+1. In a small saucepan, heat the fig jam, white wine, red wine vinegar, and cinnamon over medium heat. Cook for 5-7 minutes, until the mixture thickens.
+<br>
+2. Season the foie gras slices with salt and pepper.
+<br>
+3. Heat a skillet over high heat. Add the foie gras slices and sear for 1-2 minutes on each side, until golden brown and crispy.
+<br>
+4. Serve the foie gras with the fig compote on top.`, 
+'https://www.youtube.com/embed/djKnQP_LvSk',
+`<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>
+<i class="fa fa-star clicked"></i>`],
   ]
   var recipe = sessionStorage.getItem('recipe')
   var main = document.getElementById('recipe-contents')
